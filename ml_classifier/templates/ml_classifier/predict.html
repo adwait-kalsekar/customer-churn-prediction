@@ -1,0 +1,166 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <p>You can try our project at - <strong>{{hosted_url}}</strong></p>
+    {% if prediction_1 and prediction_2  %}
+        <div class="result">
+            <h3>This Person {{prediction_1}} - {{model_1}}</h3>
+            <h3>This Person {{prediction_2}} - {{model_2}}</h3>
+        </div>
+    {% endif %}
+    <h2>Predict the results By entering the information below:</h2>
+    <p>(Check Out the <a href="{% url 'data_dictionary' %}">Data Dictionary here!</a>)</strong></p>
+    
+    <div class="input-form">
+        <form action="/predict/" method="post">
+            {% csrf_token %}
+            
+            <div class="input-div">
+                <label htmlFor="">
+                    Name :
+                </label>
+                <input name="name" type="text" required/>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Age (18-120):
+                </label>
+                <input name="Age" type="number" min="18" max="120" required/>
+            </div>
+
+            <div class="input-div">
+                <label>Gender: </label>
+                <select name="Gender" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="Male">
+                        Male
+                    </option>
+                    <option value="Female">
+                        Female
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Credit Score (350-850):
+                </label>
+                <input name="CreditScore" type="number" min="350" max="850" required/>
+            </div>
+
+            <div class="input-div">
+                <label>Location </label>
+                <select name="Geography" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="France">
+                        France
+                    </option>
+                    <option value="Spain">
+                        Spain
+                    </option>
+                    <option value="Germany">
+                        Germany
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Tenure (0-10):
+                </label>
+                <input name="Tenure" type="number" min="0" max="10" required/>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Balance:
+                </label>
+                <input name="Balance" type="number" min="0" required/>
+            </div>
+
+            <div class="input-div">
+                <label>Number of Products Used: </label>
+                <select name="NumOfProducts" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="1">
+                        1
+                    </option>
+                    <option value="2">
+                        2
+                    </option>
+                    <option value="3">
+                        3
+                    </option>
+                    <option value="2">
+                        4
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label>Has a Credit Card?</label>
+                <select name="HasCrCard" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="1">
+                        Yes
+                    </option>
+                    <option value="0">
+                        No
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label>Is Active Member?</label>
+                <select name="IsActiveMember" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="1">
+                        Yes
+                    </option>
+                    <option value="0">
+                        No
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label htmlFor="">
+                    Estimated Salary:
+                </label>
+                <input name="EstimatedSalary" type="number" min="10" required/>
+            </div>
+
+            {% comment %} <div class="input-div">
+                <label>Choose Model</label>
+                <select name="model" required>
+                    <option value="" disabled selected>
+                        -- Choose Option --
+                    </option>
+                    <option value="model_1">
+                        {{model_1}} ({{score_1}})
+                    </option>
+                    <option value="model_2">
+                        {{model_2}} ({{score_2}})
+                    </option>
+                </select>
+            </div> {% endcomment %}
+
+            
+            <button type="submit">
+                <h4>PREDICT</h4>
+            </button>
+        </form>
+    </div>
+
+{% endblock content %}

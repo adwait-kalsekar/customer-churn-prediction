@@ -1,0 +1,317 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #292929;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #9a9a9a;
+  cursor: pointer;
+}
+
+
+
+h1 {
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin-bottom: 20px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #292929;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #ffffff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.input-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.content {
+  background-color: #1a1a1a;
+  max-width: 1200px;
+  height: 100%;
+  margin: 52px auto;
+  padding: 20px;
+}
+
+.result {
+  border: 1px solid;
+  border-color: #d5d5d5;
+  background-color: #292929;
+  margin-bottom: 20px;
+}
+
+.project-content {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  text-align: left;
+}
+
+.project-content > button {
+  height: 50px;
+  width: 50px;
+  margin: 200px 0;
+}
+
+.slides {
+  margin: 20px 5%;
+}
+
+.slides > h4 {
+  text-align: left;
+  margin-top: 50px;
+}
+
+.slides > table {
+  width: 1000px;
+}
+
+.slides > table, th, td {
+  text-align: left;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px 50px;
+}
+
+.slides > tr, th, td {
+  border: 1px solid transparent;
+  border-color: #ffffff;
+}
+
+th {
+  font-weight: 700;
+}
+
+.description {
+  padding-right: 250px;
+}
+
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: left;
+  margin: 5%;
+  padding: auto;
+}
+
+.home-content > img {
+  width: 1050px;
+  height: auto;
+}
+
+.home-content > h1 {
+  font-size: 5rem;
+}
+
+.home-content > h2 {
+  font-size: 3rem;
+}
+
+.home-content > h3 {
+  font-size: 2rem;
+}
+
+.home-content > p {
+  font-size: 1.2rem;
+}
+
+.data-dictionary {
+  text-align: left;
+}
+
+.image-desc > img {
+  height: auto;
+  width: 1050px;
+}
+
+.image-desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.image-content > p {
+  text-align: left;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.image-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 20px;
+}
+
+.eval-content > img {
+  height: auto;
+  width: 500px;
+}
+
+.eval-desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.eval-content > p {
+  text-align: left;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.eval-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 20px;
+}
+
+.arr-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 25px;
+}
+
+.view-table-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.table-header {
+  font-size: 1.2rem;
+}
+
+
+/* Slides */
+
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 728px;
+  margin: 0 auto;
+}
+ 
+/* Style each of the sides 
+with a fixed width and height */
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+ 
+/* Add animation to the slides */
+.slide-wrapper {
+   
+/* Calculate the total width on the
+  basis of number of slides */
+  width: calc(728px * 4);
+ 
+/* Specify the animation with the
+  duration and speed */
+  animation: slide ease infinite;
+}
+ 
+/* Set the background color
+of each of the slides */
+.slide:nth-child(1) {
+  background: green;
+}
+ 
+.slide:nth-child(2) {
+  background: pink;
+}
+ 
+.slide:nth-child(3) {
+  background: red;
+}
+ 
+.slide:nth-child(4) {
+  background: yellow;
+}
+ 
+/* Define the animation 
+for the slideshow */
+@keyframes slide {
+   
+/* Calculate the margin-left for 
+  each of the slides */
+  20% {
+    margin-left: 0px;
+  }
+ 
+  40% {
+    margin-left: calc(-728px * 1);
+  }
+ 
+  60% {
+    margin-left: calc(-728px * 2);
+  }
+ 
+  80% {
+    margin-left: calc(-728px * 3);
+  }
+}

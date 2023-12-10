@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="view-table-div">
+    <table class="view-table">
+        <tr class="table-header">
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Heart Disease Prediction
+            </th>
+            <th>
+                Probability
+            </th>
+        </tr>
+        {% for prediction in predictions %}
+        <tr>
+            <td>
+                {{prediction.name}}
+            </td>
+            <td>
+                {{prediction.age}}
+            </td>
+            <td>
+                {{prediction.gender}}
+            </td>
+            <td>
+                {{prediction.prediction}}
+            </td>
+            <td>
+                {{prediction.probability}}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock content %}
