@@ -4,12 +4,9 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("project/", views.view_project, name="project"),
-    path("eda/", views.view_eda, name="eda"),
-    path("results/", views.view_results, name="results"),
-    path("eval/", views.view_eval, name="eval"),
+    path("project/<str:page>/", views.view_project, name="project"),
     path("predict/", views.predict, name="predict"),
     path("table/", views.view_table, name="table"),
-    path("data_dictionary/", views.view_data_dictionary, name="data_dictionary"),
-    path("team/", views.view_team, name="team")
+
+    path("<path:all_paths>/", views.error_page, name="error_page"),
 ]

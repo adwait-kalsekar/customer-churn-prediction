@@ -17,10 +17,13 @@
                 Gender
             </th>
             <th>
-                Heart Disease Prediction
+                Location
             </th>
             <th>
-                Probability
+                Churn Prediction (LR)
+            </th>
+            <th>
+                Churn Prediction (RFC)
             </th>
         </tr>
         {% for prediction in predictions %}
@@ -35,10 +38,17 @@
                 {{prediction.gender}}
             </td>
             <td>
-                {{prediction.prediction}}
+                {{prediction.geography}}
             </td>
             <td>
-                {{prediction.probability}}
+                {{prediction.prediction_1}} 
+                <br>
+                ({{prediction.probability_1}})
+            </td>
+            <td>
+                {{prediction.prediction_2}} 
+                <br>
+                ({{prediction.probability_2}})
             </td>
         </tr>
         {% endfor %}

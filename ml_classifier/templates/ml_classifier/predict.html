@@ -9,7 +9,6 @@
         </div>
     {% endif %}
     <h2>Predict the results By entering the information below:</h2>
-    <p>(Check Out the <a href="{% url 'data_dictionary' %}">Data Dictionary here!</a>)</strong></p>
     
     <div class="input-form">
         <form action="/predict/" method="post">
@@ -19,7 +18,7 @@
                 <label htmlFor="">
                     Name :
                 </label>
-                <input name="name" type="text" required/>
+                <input name="Name" type="text" required/>
             </div>
 
             <div class="input-div">

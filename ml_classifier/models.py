@@ -3,10 +3,10 @@ import uuid
 
 # Create your models here.
 
-class Slides(models.Model):
+class Slide(models.Model):
     CATEGORY_TYPE = (
-        ('eda', 'Visualization'),
         ('intro', 'Introduction'),
+        ('eda', 'Visualization'),
         ('clf', 'Classification'),
         ('clus', 'Clustering'),
     )
@@ -40,8 +40,8 @@ class Prediction(models.Model):
     )
 
     CHOICE_TYPE = (
-        ("Yes", "Yes"),
-        ("No", "No"),
+        ("1", "Yes"),
+        ("0", "No"),
     )
 
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -56,9 +56,9 @@ class Prediction(models.Model):
     has_cr_card = models.CharField(max_length=10, choices=CHOICE_TYPE)
     is_active = models.CharField(max_length=10, choices=CHOICE_TYPE)
     estimated_salary = models.IntegerField()
-    prediction_1 = models.CharField(max_length=10)
+    prediction_1 = models.CharField(max_length=100)
     probability_1 = models.FloatField()
-    prediction_2 = models.CharField(max_length=10)
+    prediction_2 = models.CharField(max_length=100)
     probability_2 = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
 
